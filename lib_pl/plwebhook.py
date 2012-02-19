@@ -1,6 +1,6 @@
-import lib_pl.webhook
+from lib_pl.webhook import *
 
-class plwebhook(lib_pl.webhook.webhook):
+class plwebhook(webhook):
     API_URL = 'http://d01.peanutlabs.com/skypebot/receive.php'
     
     def getUrl(self):

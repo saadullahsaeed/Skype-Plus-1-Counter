@@ -1,4 +1,4 @@
-import lib_pl.plwebhook 
+from lib_pl.plwebhook import *
 
 class skype_hook:
     """Skype Hook Abstract class"""
@@ -9,13 +9,13 @@ class skype_hook:
         self.conversation = conversation
         
     def getWebhook(self):
-        return lib_pl.plwebhook.plwebhook()
+        return plwebhook()
     
     
     def notifyWebHook(self, params):
         webHook = self.getWebhook()
         webHook.setParams(params)
-        webHook.setCmd(self.getCmd())
+        #webHook.setCmd(self.getCmd())
         return webHook.callHook()
     
     def getCmd(self):

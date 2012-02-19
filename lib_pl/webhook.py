@@ -22,11 +22,10 @@ class webhook:
             
         
     def callHook(self):
-        self.loadUrl(self.getUrl(), self.params)
+        print self.loadUrl(self.getUrl(), self.params)
             
             
     def loadUrl(self, url, params):
-        print "URL: " + url
         data = urllib.urlencode(params)
         req = urllib2.Request(url, data)
         response = urllib2.urlopen(req)

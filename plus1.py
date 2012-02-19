@@ -1,6 +1,4 @@
-import sys
-import keypair
-import pl
+import sys, keypair, pl
 from time import sleep
 
 sys.path.append(keypair.distroRoot + '/ipc/python')
@@ -19,11 +17,13 @@ accountName = sys.argv[1]
 accountPsw  = sys.argv[2]
 loggedIn	= False
 
+#OnMessage Handler
 def OnMessage(self, message, changesInboxTimestamp, supersedesHistoryMessage, conversation):
 	if message.author != accountName:
-		print "Sending Notification"
 		pl.notifyHooks(message, conversation)	
-			
+
+
+#AccountOnChange Handler
 def AccountOnChange (self, property_name):
 	global loggedIn
 	if property_name == 'status':
