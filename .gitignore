@@ -1,2 +1,3 @@
 *.pyc
 DevVersion.pem.cer
+.gitignore~

@@ -20,4 +20,7 @@ class skype_hook:
     
     def getCmd(self):
         return ''
+
+	def getTarget(self):
+		return ''
     
